@@ -55,6 +55,34 @@ The model is trained on the GoPro Image Deblurring Dataset:
 
 Each sample has a blurred image and its sharp ground truth.
 
+## How to run (Google Colab)
+
+1. Open Google Colab
+
+2. Upload nafnet_blur_reduction_final.py (or open the notebook version)
+
+3. Runtime → Change runtime type → set GPU
+
+4. Run all cells (Runtime → Run all)
+
+What happens when you run it:
+* Installs dependencies (numpy, pytorch-msssim, torchvision, etc.)
+  
+* Clones the CONTRIQUE repo for feature extraction 
+
+* Downloads the GoPro Large dataset via kagglehub 
+
+* Extracts CONTRIQUE features and saves image_features.csv 
+
+* Trains NAFNet on a subset of GoPro and evaluates on test pairs
+
+Outputs you should see/save:
+* image_features.csv (feature extraction output) 
+
+* nafnet_results.png (visual results grid) 
+
+* nafnet_deblur_model.pth (trained model weights)
+
 ## Best model configuration
 
 After testing many settings, the best results came from:
